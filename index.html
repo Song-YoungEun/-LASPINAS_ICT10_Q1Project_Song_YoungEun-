@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Italian Esspresso</title>
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.4/brython_stdlib.min.js"></script>
+
+    <style>
+         {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8eaf0;
+            color: darkblue;
+        }
+
+        nav {
+            background: blueviolet;
+            color: white;
+            padding: 18px 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            margin: 0;
+            color: aliceblue;
+        }
+
+        nav span {
+            font-size: 13px;
+            color: #f5dce7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 35px auto;
+        }
+
+        .hero {
+            background: cadetblue;
+            color: ghostwhite;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .hero .cup {
+            font-size: 45px;
+        }
+
+        .hero h1 {
+            margin: 8px 0;
+        }
+
+        .hero p {
+            margin-bottom: 0;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px #30263b12;
+        }
+
+        .card h2 {
+            font-size: 21px;
+            margin-top: 0;
+            color: #694b7d;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 14px 10px;
+            margin: 10px 0;
+            border: 1px solid #f0dce6;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background: #fff5f8;
+        }
+
+        .menu-item input {
+            accent-color: #c06b99;
+            width: 17px;
+            height: 17px;
+        }
+
+        .item-name {
+            flex: 1;
+        }
+
+        .price {
+            color: #b54e83;
+            font-weight: bold;
+        }
+
+        label.field-label {
+            display: block;
+            font-weight: bold;
+            margin-top: 13px;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e2cbd8;
+            border-radius: 9px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            border: none;
+            padding: 13px;
+            margin-top: 15px;
+            background: #694b7d;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #503661;
+        }
+
+        .blue-button {
+            background: #c06b99;
+        }
+
+        .blue-button:hover {
+            background: #a34f7c;
+        }
+
+        .result {
+            background: #fff5f8;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 18px;
+            overflow-wrap: anywhere;
+            line-height: 1.7;
+        }
+
+        .result:empty {
+            display: none;
+        }
+
+        .receipt-total {
+            font-size: 19px;
+            font-weight: bold;
+            color: #a34f7c;
+            border-top: 1px dashed #d9b8ca;
+            padding-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            color: #796b81;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                padding: 15px;
+            }
+
+            .container {
+                width: 94%;
+            }
+        }
+    </style>
+</head>
+
+<body onload="brython()">
+
+    <nav>
+        <h2>Italian Esspresso</h2>
+    </nav>
+
+    <div class="container">
+
+        <div class="hero">
+
+            <h1>The BEST italian Esspresso</h1>
+            <p>OBMC Laspinas: Young Eun Song 10 Ruby</p>
+        </div>
+
+        <div class="layout">
+
+          
+            <section class="card">
+                <h2>Coffee or esspresso Menu</h2>
+                <p>Select drinks you want to order.</p>
+
+                <label class="menu-item">
+                    <input type="checkbox" id="item1" value="99">
+                    <span class="item-name">Americano</span>
+                    <span class="price">₱100</span>
+                </label>
+
+                <label class="menu-item">
+                    <input type="checkbox" id="item2" value="129">
+                    <span class="item-name">French traditional Latte</span>
+                    <span class="price">₱120</span>
+                </label>
+
+                <label class="menu-item">
+                    <input type="checkbox" id="item3" value="189">
+                    <span class="item-name">Cold Brew</span>
+                    <span class="price">₱156</span>
+                </label>
+
+                <label class="menu-item">
+                    <input type="checkbox" id="item4" value="159">
+                    <span class="item-name">BEST: Esspresso</span>
+                    <span class="price">₱153</span>
+                </label>
+
+                <label class="menu-item">
+                    <input type="checkbox" id="item5" value="129">
+                    <span class="item-name">COLD Macchiato</span>
+                    <span class="price">₱130</span>
+                </label>
+
+                <button id="order_btn" class="pink-button">
+                    Create Order NOW
+                </button>
+
+                <div id="show" class="result">
+                    Your receipt:
+                </div>
+            </section>
+
+          
+            <section class="card">
+                <h2>The SKU Generator</h2>
+                <p>Create a product code for your inventory.</p>
+
+                <label class="field-label" for="category">
+                    Product Category
+                </label>
+                <input type="text" id="category"
+                       placeholder="e.g. Coffee">
+
+                <label class="field-label" for="product_name">
+                    Product Name
+                </label>
+                <input type="text" id="product_name"
+                       placeholder="e.g. Americano">
+
+                <label class="field-label" for="quantity">
+                    Stock Quantity
+                </label>
+                <input type="number" id="quantity"
+                       placeholder="e.g. 50" min="0" step="1">
+
+                <button id="sku_btn">Generate SKU</button>
+
+                <div id="sku_output" class="result"></div>
+            </section>
+
+        </div>
+    </div>
+
+    <footer>
+        Made with coffee beans · Best italian esspresso shop.
+    </footer>
+
+    <script type="text/python">
+
+    </script>
+
+</body>
+</html>
